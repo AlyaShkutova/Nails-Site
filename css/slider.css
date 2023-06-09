@@ -15,6 +15,9 @@
 	top:0;
 	left:0;
 }
+.footer__item.socials {
+    padding-left: 40px;
+}
 .slider__label {
 	overflow:hidden;
 	display:inline-block;

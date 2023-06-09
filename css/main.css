@@ -17,7 +17,9 @@ a {
 .altushka {
     width: 50%;
 }
-
+.footer__item.socials {
+    padding-left: 40px;
+}
 .navigation{
     backdrop-filter: blur(100px);
     list-style-type: none;

@@ -5,13 +5,15 @@ if(!isset($_SESSION['logged_user'])){
 }
 if(isset($_POST['go'])){
     $id = $_POST['id'];
-    $query = "UPDATE `call` SET `is_answer` = 'y' WHERE `id` = '$id'";
+    $query = "UPDATE `call` SET `is_answer` = 'y' WHERE `id` = '$id' , `who` = '$admin_id'";
     mysqli_query($link, $query);
 }
 
+$admin_id = $_SESSION['logged_user']['id'];
+
 if(isset($_POST['not'])){
     $id = $_POST['id'];
-    $query = "UPDATE `feedback` SET `is_answer` = 'y' WHERE `id` = '$id'";
+    $query = "UPDATE `feedback` SET `is_answer` = 'y', `who` = '$admin_id' WHERE `id` = '$id'";
     mysqli_query($link, $query);
     }
 ?>
@@ -20,7 +22,6 @@ if(isset($_POST['not'])){
 <html lang="en" class="h-100">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Админка</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sticky-footer-navbar/">
@@ -29,7 +30,7 @@ if(isset($_POST['not'])){
 
     
 
-<link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/5.3/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
@@ -62,7 +63,7 @@ if(isset($_POST['not'])){
 <main class="flex-shrink-0">
   <div class="container">
     <h1 class="mt-5">Отвечайте клиентам прямо из crm</h1>
-    <p class="lead">Внизу вы увидите всех ваших клиентов, чтобы пометить, что клиент обработан, нажмите кнопку "Обзвонен"</p>
+    <p class="lead">Внизу вы увидите всех ваших клиентов, чтобы пометить, что клиент обработан, нажмите кнопку "Обработан"</p>
     <table>
     <tr>
         <td>Имя</td>
@@ -97,7 +98,7 @@ if(isset($_POST['not'])){
         }
     ?>
         <?php
-        $query = mysqli_query($link, "SELECT * from `feedback` where `is_answer` = 0");
+        $query = mysqli_query($link, "SELECT * from `feedback` ");
         $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
         if(empty($result)){
             echo '<b>Надеюсь, сообщений никаких нету</b>';
@@ -113,10 +114,24 @@ if(isset($_POST['not'])){
                 }
                 ?>
                 <td>
+                <?php
+                  if($item['is_answer'] = "y"){
+                    echo "Вопрос обработан </br>";
+                    $who = $item['who'];
+                    $querys = "SELECT * FROM `workers` WHERE `id` = '$who'";
+                    $results = mysqli_query($link, $querys);
+                    foreach($results as $thing){
+                      echo $thing['f_name'] . " " . $thing['l_name'];
+                    }
+                  } else {
+                ?>
                 <form method="POST" action="./index.php">
                     <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
                     <input class="btn btn-primary" name="not" type="submit" value="Обработан">
                 </form>
+                <?php
+                  }
+                ?>
                 </td>
                 <?
                 echo '</tr>';

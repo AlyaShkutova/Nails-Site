@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect('localhost', 'root', 'root', 'nailz');
+$link = mysqli_connect('localhost', 'root', '', 'nailz');
 
 session_start();
 ?>

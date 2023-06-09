@@ -26,7 +26,7 @@ if(isset($_POST['go'])){
 
 
 
-<link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/5.3/examples/sticky-footer-navbar/sticky-footer-navbar.css" rel="stylesheet">
@@ -61,10 +61,10 @@ if(isset($_POST['go'])){
     <h1 class="mt-5">Управление прайс листом</h1>
     <p class="lead">Создавайте новые услуги</p>
     <form method="POST" action="../function/make.php">
-    <input type="text" name="name" placeholder="Название услуги"><br>
-    <textarea type="text" name="text" placeholder="Описание"></textarea><br>
-    <input type="number" name="price"/><br>
-    <input type="submit" name="go" value="Создать"/>
+    <input type="text" class="form-control" name="name" placeholder="Название услуги">
+    <textarea class="form-control" type="text" name="text" rows="10" placeholder="Описание"></textarea>
+    <input type="number" class="form-control" placeholder="Цена"  name="price"/><br>
+    <input type="submit" class="btn btn-outline-secondary" name="go" value="Создать"/>
     </form>
 </div>
 </main>

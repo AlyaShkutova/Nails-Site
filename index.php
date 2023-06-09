@@ -152,11 +152,13 @@
                             <p>Телефон: +79006739040</p>
                             <p>Email: kaminskaya.studio@bk.ru</p>
                         </div>
-                        <div class="footer__item">
+                        <div class="footer__item socials">
                             <h3>Мы в соцсетях:</h3>
                             <div class="social">
-                                <a href="https://instagram.com/kaminskaya.nailsomsk?igshid=YmMyMTA2M2Y=" target="_blank"><img class="social" src="img/instagram.png" alt="instagram"></a>
+                                    <center>
+                                    <a href="https://instagram.com/kaminskaya.nailsomsk?igshid=YmMyMTA2M2Y=" target="_blank"><img class="social" src="img/instagram.png" alt="instagram"></a>
                                 <a href="https://instagram.com/kaminskaya.nailsomsk?igshid=YmMyMTA2M2Y=" target="_blank"><img class="social" src="img/tg.png" alt="tg"></a>
+                                    </center>
                             </div>
                         </div>
                     </div>

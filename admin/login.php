@@ -24,16 +24,10 @@ if(isset($_SESSION['logged_user'])){
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Авторизация</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
-
-    
-
-    
-
-<link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
 
 <meta name="theme-color" content="#712cf9">
 
@@ -48,15 +42,15 @@ if(isset($_SESSION['logged_user'])){
 
     <div class="form-floating">
       <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
-      <label for="floatingInput">Email</label>
+      <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Пароль">
-      <label for="floatingPassword">Пароль</label>
+      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+      <label for="floatingPassword">Password</label>
     </div>
 
     <button class="w-100 btn btn-lg btn-primary" name='login' type="submit">Войти</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
   </form>
 </main>
 
