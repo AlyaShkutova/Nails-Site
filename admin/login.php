@@ -25,10 +25,7 @@ if(isset($_SESSION['logged_user'])){
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.108.0">
-    <title>Signin Template · Bootstrap v5.3</title>
+    <title>Авторизация</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
 
@@ -51,15 +48,15 @@ if(isset($_SESSION['logged_user'])){
 
     <div class="form-floating">
       <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+      <label for="floatingInput">Email</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
-      <label for="floatingPassword">Password</label>
+      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Пароль">
+      <label for="floatingPassword">Пароль</label>
     </div>
 
     <button class="w-100 btn btn-lg btn-primary" name='login' type="submit">Войти</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+    <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
   </form>
 </main>
 
